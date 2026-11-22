@@ -5,7 +5,7 @@ interface BrandMarkProps {
   size?: "sm" | "md";
 }
 
-export function BrandMark({ showStatus = true, size = "md" }: BrandMarkProps) {
+export function BrandMark({ showStatus = false, size = "md" }: BrandMarkProps) {
   const gradId = useId();
   const iconBox = size === "sm" ? "h-8 w-8 rounded-lg" : "h-9 w-9 rounded-xl";
   const textSize = size === "sm" ? "text-lg" : "text-[1.25rem]";
@@ -24,7 +24,14 @@ export function BrandMark({ showStatus = true, size = "md" }: BrandMarkProps) {
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <linearGradient id={gradId} x1="2.5" y1="12.5" x2="21.5" y2="12.5" gradientUnits="userSpaceOnUse">
+            <linearGradient
+              id={gradId}
+              x1="2.5"
+              y1="12.5"
+              x2="21.5"
+              y2="12.5"
+              gradientUnits="userSpaceOnUse"
+            >
               <stop offset="0%" stopColor="#059669" />
               <stop offset="52%" stopColor="#10B981" />
               <stop offset="100%" stopColor="#0EA5E9" />

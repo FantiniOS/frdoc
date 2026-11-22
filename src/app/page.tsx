@@ -2,7 +2,6 @@ import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { TransformationCompare } from "@/components/TransformationCompare";
-import { ValuePillars } from "@/components/ValuePillars";
 import { EcosystemExplorer } from "@/components/EcosystemExplorer";
 import { ArchitectureBento } from "@/components/ArchitectureBento";
 import { DeploymentTimeline } from "@/components/DeploymentTimeline";
@@ -17,7 +16,6 @@ export default function HomePage() {
       <main className="flex-1">
         <HeroSection />
         <TransformationCompare />
-        <ValuePillars />
         <EcosystemExplorer />
         <ArchitectureBento />
         <DeploymentTimeline />

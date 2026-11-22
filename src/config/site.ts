@@ -5,22 +5,20 @@ export const siteConfig = {
   // Número oficial de WhatsApp comercial no formato DDI + DDD + número (apenas dígitos): (31) 99694-4540
   whatsappNumber: "5531996944540",
   whatsappMessage:
-    "Olá! Gostaria de agendar uma demonstração exclusiva do ecossistema FRdoc para a minha clínica.",
+    "Olá! Gostaria de agendar uma demonstração rápida do FRdoc com o nome da minha clínica.",
   contactEmail: "contato@frdoc.com.br",
   seo: {
     title:
-      "FRdoc — O Ecossistema Clínico Próprio que Encanta Pacientes e Eleva sua Medicina",
+      "FRdoc — Painel Clínico e Aplicativo Próprio para Endocrinologia e Nutrologia",
     description:
-      "Painel Web de telemetria metabólica avançada e Aplicativo Mobile exclusivo com a marca da sua clínica, em servidor e banco de dados 100% dedicados (Single-Tenant + White-Label). Projetado para Endocrinologia, Nutrologia e Saúde Integrativa com conformidade LGPD e CFM.",
+      "Sua clínica presente na rotina do paciente todos os dias. Um painel clínico inteligente para o médico e um aplicativo exclusivo com a marca da sua clínica, em espaço 100% privado e adequado à LGPD.",
     shortDescription:
-      "Painel Web de telemetria viva + Aplicativo Mobile com a marca da sua clínica em instância 100% dedicada (Single-Tenant + White-Label).",
+      "Painel clínico inteligente para o médico e aplicativo exclusivo com a marca da sua clínica para acompanhar pacientes todos os dias.",
   },
   navLinks: [
-    { label: "Experiência", href: "#experiencia" },
-    { label: "Diferenciais", href: "#diferenciais" },
-    { label: "Ecossistema", href: "#ecossistema" },
-    { label: "Soberania", href: "#soberania" },
-    { label: "Implantação", href: "#implantacao" },
+    { label: "Simulador", href: "#simulador" },
+    { label: "Recursos", href: "#recursos" },
+    { label: "Segurança", href: "#seguranca" },
     { label: "Dúvidas", href: "#duvidas" },
   ],
 } as const;

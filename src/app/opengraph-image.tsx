@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "FRdoc — Ecossistema Clínico Dedicado e White-Label";
+export const alt = "FRdoc — Painel Clínico e Aplicativo Próprio da sua Clínica";
 export const size = {
   width: 1200,
   height: 630,
@@ -23,7 +23,6 @@ export default function OpenGraphImage() {
           position: "relative",
         }}
       >
-        {/* Filete superior multicolorido */}
         <div
           style={{
             position: "absolute",
@@ -35,7 +34,6 @@ export default function OpenGraphImage() {
           }}
         />
 
-        {/* Top bar */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
             <div
@@ -66,14 +64,9 @@ export default function OpenGraphImage() {
                 />
               </svg>
             </div>
-            <div style={{ display: "flex", alignItems: "baseline", gap: "10px" }}>
-              <span style={{ fontSize: "30px", fontWeight: 800, color: "#0F172A", letterSpacing: "-0.04em" }}>
-                FRdoc
-              </span>
-              <span style={{ fontSize: "15px", fontWeight: 700, color: "#0EA5E9" }}>
-                2.0
-              </span>
-            </div>
+            <span style={{ fontSize: "30px", fontWeight: 800, color: "#0F172A", letterSpacing: "-0.04em" }}>
+              FRdoc
+            </span>
           </div>
 
           <div
@@ -88,18 +81,16 @@ export default function OpenGraphImage() {
               fontSize: "14px",
               fontWeight: 700,
               color: "#0F172A",
-              letterSpacing: "0.06em",
             }}
           >
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#10B981" }} />
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#0EA5E9" }} />
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#6366F1" }} />
-            <span style={{ marginLeft: "4px" }}>SINGLE-TENANT · WHITE-LABEL</span>
+            <span style={{ marginLeft: "4px" }}>ENDOCRINOLOGIA &amp; NUTROLOGIA</span>
           </div>
         </div>
 
-        {/* Center headline */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "20px", maxWidth: "980px" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "20px", maxWidth: "960px" }}>
           <div
             style={{
               fontSize: "54px",
@@ -109,14 +100,13 @@ export default function OpenGraphImage() {
               letterSpacing: "-0.035em",
             }}
           >
-            Ecossistema clínico próprio, telemetria viva e instância 100% dedicada.
+            Sua clínica presente na rotina do paciente, todos os dias.
           </div>
-          <div style={{ fontSize: "23px", color: "#475569", lineHeight: 1.45 }}>
-            Painel Web e App Mobile com a marca da sua clínica para Endocrinologia, Nutrologia e Saúde Integrativa — com servidor e banco exclusivos.
+          <div style={{ fontSize: "24px", color: "#475569", lineHeight: 1.45 }}>
+            Painel clínico inteligente para o médico e aplicativo exclusivo com a marca da sua clínica para o paciente.
           </div>
         </div>
 
-        {/* Bottom strip */}
         <div
           style={{
             display: "flex",
@@ -127,13 +117,13 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ display: "flex", gap: "20px", fontSize: "15px", fontWeight: 700 }}>
-            <span style={{ color: "#059669" }}>TELEMETRIA 70–140 mg/dL</span>
+            <span style={{ color: "#059669" }}>APP COM SUA MARCA</span>
             <span style={{ color: "#CBD5E1" }}>·</span>
-            <span style={{ color: "#0284C7" }}>SINCRONIA WEB ↔ APP</span>
+            <span style={{ color: "#0284C7" }}>GLICEMIA EM TEMPO REAL</span>
             <span style={{ color: "#CBD5E1" }}>·</span>
-            <span style={{ color: "#6366F1" }}>TABELA TACO 1:N</span>
+            <span style={{ color: "#6366F1" }}>DIETAS TACO</span>
             <span style={{ color: "#CBD5E1" }}>·</span>
-            <span style={{ color: "#F59E0B" }}>LGPD &amp; CFM</span>
+            <span style={{ color: "#F59E0B" }}>SIGILO &amp; LGPD</span>
           </div>
           <div style={{ fontSize: "16px", fontWeight: 800, color: "#0F172A" }}>
             frdoc.com.br

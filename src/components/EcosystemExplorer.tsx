@@ -17,7 +17,6 @@ import {
   Repeat,
   Shield,
   Smartphone,
-  Sparkles,
   Syringe,
   TrendingUp,
 } from "lucide-react";
@@ -28,68 +27,53 @@ type AppModuleId = "dieta-app" | "glicemia-app" | "checkins-app" | "evolucao-app
 
 interface ModuleItem<T extends string> {
   id: T;
-  code: string;
   title: string;
   subtitle: string;
-  metric: string;
   iconBg: string;
   activeBorder: string;
   railColor: string;
-  metricClass: string;
   icon: React.ComponentType<{ className?: string }>;
 }
 
 const WEB_MODULES: readonly ModuleItem<WebModuleId>[] = [
   {
     id: "prontuario",
-    code: "W-01",
-    title: "Prontuário com Telemetria",
+    title: "Prontuário Visual",
     subtitle:
-      "A jornada metabólica completa em uma única tela — sem abrir 5 abas nem decifrar papéis antes de atender.",
-    metric: "Curva + Composição + Adesão",
+      "Toda a evolução do paciente em uma única tela, antes mesmo dele entrar na sala.",
     iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200/80",
     activeBorder: "border-emerald-300",
     railColor: "bg-gradient-to-b from-emerald-500 to-sky-500",
-    metricClass: "bg-emerald-50 text-emerald-700",
     icon: Activity,
   },
   {
     id: "glicemia",
-    code: "W-02",
-    title: "Mapa Glicêmico & Insulina",
+    title: "Mapa de Glicemia & Insulina",
     subtitle:
-      "Heatmap colorido por horário e refeição com doses de insulina e exportação de PDF institucional pronto para o paciente.",
-    metric: "Heatmap + PDF White-Label",
+      "Curvas claras por horário e relatório em PDF bonito para entregar ao paciente.",
     iconBg: "bg-rose-50 text-rose-600 border-rose-200/80",
     activeBorder: "border-rose-300",
     railColor: "bg-gradient-to-b from-rose-500 to-indigo-500",
-    metricClass: "bg-rose-50 text-rose-700",
     icon: Syringe,
   },
   {
     id: "dietas",
-    code: "W-03",
-    title: "Biblioteca de Dietas (Tabela TACO)",
+    title: "Dietas Inteligentes (Tabela TACO)",
     subtitle:
-      "Prescrição precisa com distribuição visual de macros, medidas caseiras e trocas inteligentes 1:N que liberam sua equipe.",
-    metric: "Donut Macros + Trocas 1:N",
+      "Prescreva em minutos com medidas caseiras e trocas automáticas de alimentos.",
     iconBg: "bg-amber-50 text-amber-600 border-amber-200/80",
     activeBorder: "border-amber-300",
     railColor: "bg-gradient-to-b from-amber-500 to-violet-500",
-    metricClass: "bg-amber-50 text-amber-700",
     icon: Apple,
   },
   {
     id: "gestao",
-    code: "W-04",
-    title: "Pacotes de Consultas, Agenda & Perfis",
+    title: "Agenda, Pacotes e Equipe",
     subtitle:
-      "Controle visual de sessões que impulsiona renovações, agenda categorizada por cor e governança de acesso por cargo.",
-    metric: "Diretoria · Médico · Secretária",
+      "Controle consultas, pacotes de acompanhamento e acessos da recepção sem complicação.",
     iconBg: "bg-indigo-50 text-indigo-600 border-indigo-200/80",
     activeBorder: "border-indigo-300",
     railColor: "bg-gradient-to-b from-indigo-500 to-sky-500",
-    metricClass: "bg-indigo-50 text-indigo-700",
     icon: CalendarClock,
   },
 ];
@@ -97,59 +81,47 @@ const WEB_MODULES: readonly ModuleItem<WebModuleId>[] = [
 const APP_MODULES: readonly ModuleItem<AppModuleId>[] = [
   {
     id: "dieta-app",
-    code: "A-01",
-    title: "Dieta Estruturada no Bolso",
+    title: "Dieta no Bolso",
     subtitle:
-      "Refeições organizadas com pílulas coloridas de macros e substituições equivalentes aprovadas em um único toque.",
-    metric: "Autonomia com Tabela TACO",
+      "Refeições claras e troca de alimentos em um toque, sem mandar mensagem toda hora.",
     iconBg: "bg-violet-50 text-violet-600 border-violet-200/80",
     activeBorder: "border-violet-300",
     railColor: "bg-gradient-to-b from-violet-500 to-amber-500",
-    metricClass: "bg-violet-50 text-violet-700",
     icon: Repeat,
   },
   {
     id: "glicemia-app",
-    code: "A-02",
-    title: "Lançamento Rápido de Glicemia",
+    title: "Glicemia em Segundos",
     subtitle:
-      "Registro capilar em segundos com régua visual colorida de faixas-alvo que educa, orienta e motiva o paciente.",
-    metric: "Régua 4 Faixas em Tempo Real",
+      "Registro rápido com cores que mostram na hora se o paciente está no alvo.",
     iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200/80",
     activeBorder: "border-emerald-300",
     railColor: "bg-gradient-to-b from-sky-500 via-emerald-500 to-rose-500",
-    metricClass: "bg-emerald-50 text-emerald-700",
     icon: LineChart,
   },
   {
     id: "checkins-app",
-    code: "A-03",
-    title: "Check-ins Diários",
+    title: "Rotina que Motiva",
     subtitle:
-      "Gauges e barras vibrantes de hidratação, treino e ritmo intestinal que transformam disciplina em hábito diário.",
-    metric: "Água · Treino · Ritmo Intestinal",
+      "Check-ins rápidos de água, treino e intestino que mantêm o paciente engajado.",
     iconBg: "bg-sky-50 text-sky-600 border-sky-200/80",
     activeBorder: "border-sky-300",
     railColor: "bg-gradient-to-b from-sky-500 to-orange-500",
-    metricClass: "bg-sky-50 text-sky-700",
     icon: Droplets,
   },
   {
     id: "evolucao-app",
-    code: "A-04",
-    title: "Evolução & Canal Direto",
+    title: "Evolução & Recepção",
     subtitle:
-      "Anéis multicoloridos de consistência, tendência clara de resultados e atalho direto para a recepção da clínica.",
-    metric: "Fidelização & Renovação Natural",
+      "Gráficos que mostram o progresso real e atalho direto para falar com a clínica.",
     iconBg: "bg-indigo-50 text-indigo-600 border-indigo-200/80",
     activeBorder: "border-indigo-300",
     railColor: "bg-gradient-to-b from-emerald-500 via-sky-500 to-indigo-500",
-    metricClass: "bg-indigo-50 text-indigo-700",
     icon: TrendingUp,
   },
 ];
 
-const HEATMAP_ROWS = [
+const GLYCEMIA_TABLE_ROWS = [
   { day: "17/11", jejum: 92, cafe: 124, almoco: 136, jantar: 118, insulin: 14 },
   { day: "18/11", jejum: 96, cafe: 146, almoco: 174, jantar: 129, insulin: 16 },
   { day: "19/11", jejum: 94, cafe: 128, almoco: 149, jantar: 121, insulin: 14 },
@@ -198,7 +170,6 @@ const APP_PROTEIN_SWAPS = [
     carb: "0g",
     prot: "38g",
     fat: "4g",
-    fiber: "0g",
   },
   {
     id: "tilapia",
@@ -207,16 +178,14 @@ const APP_PROTEIN_SWAPS = [
     carb: "0g",
     prot: "36g",
     fat: "3g",
-    fiber: "0g",
   },
   {
     id: "patinho",
     name: "Patinho moído refogado",
-    measure: "4 col. sopa cheias (115g)",
+    measure: "4 col. sopa (115g)",
     carb: "0g",
     prot: "35g",
     fat: "6g",
-    fiber: "0g",
   },
 ] as const;
 
@@ -224,42 +193,42 @@ const GLYCEMIA_RULER_SAMPLES = [
   {
     value: 64,
     context: "Pré-Treino",
-    status: "Hipoglicemia",
+    status: "Abaixo do alvo",
     positionPct: 12,
     badgeClass: "bg-sky-100 text-sky-800 border-sky-200",
     valueClass: "text-sky-600",
-    note: "Abaixo de 70 mg/dL. Siga o protocolo de correção rápida.",
+    note: "Abaixo de 70 mg/dL. Siga a orientação de correção.",
   },
   {
     value: 96,
     context: "Jejum",
-    status: "No Alvo Ideal",
+    status: "No alvo ideal",
     positionPct: 38,
     badgeClass: "bg-emerald-100 text-emerald-800 border-emerald-200",
     valueClass: "text-emerald-600",
-    note: "Excelente controle metabólico dentro da faixa 70–139 mg/dL.",
+    note: "Ótimo controle dentro da faixa de 70 a 139 mg/dL.",
   },
   {
     value: 148,
-    context: "Pós-2h",
-    status: "Atenção Limítrofe",
+    context: "Pós-refeição",
+    status: "Atenção",
     positionPct: 66,
     badgeClass: "bg-amber-100 text-amber-800 border-amber-200",
     valueClass: "text-amber-600",
-    note: "Levemente acima do alvo pós-prandial. Registrado no mapa.",
+    note: "Um pouco acima do ideal. Já salvo para sua consulta.",
   },
   {
     value: 176,
-    context: "Pós-2h",
-    status: "Pico Elevado",
+    context: "Pós-refeição",
+    status: "Pico alto",
     positionPct: 89,
     badgeClass: "bg-rose-100 text-rose-800 border-rose-200",
     valueClass: "text-rose-600",
-    note: "Fora do alvo (≥ 160 mg/dL). Alerta sincronizado ao prontuário.",
+    note: "Acima de 160 mg/dL. Destacado no painel do médico.",
   },
 ] as const;
 
-function getHeatmapCellStyle(val: number): string {
+function getGlycemiaCellStyle(val: number): string {
   if (val >= 160) {
     return "border-rose-200 bg-rose-50 text-rose-700";
   }
@@ -274,7 +243,6 @@ export function EcosystemExplorer() {
   const [activeWebModule, setActiveWebModule] = useState<WebModuleId>("prontuario");
   const [activeAppModule, setActiveAppModule] = useState<AppModuleId>("dieta-app");
 
-  // Micro-interações locais dentro dos palcos
   const [showPdfPreview, setShowPdfPreview] = useState(false);
   const [selectedTacoIndex, setSelectedTacoIndex] = useState(0);
   const [selectedAppSwapIndex, setSelectedAppSwapIndex] = useState(0);
@@ -286,7 +254,7 @@ export function EcosystemExplorer() {
   const selectedAppSwap = APP_PROTEIN_SWAPS[selectedAppSwapIndex];
   const selectedGlycemia = GLYCEMIA_RULER_SAMPLES[selectedGlycemiaIndex];
 
-  // Cálculo determinístico do gráfico de rosca (Donut SVG) de Macronutrientes TACO
+  // Gráfico de rosca de macronutrientes
   const totalMacros =
     selectedTaco.carbG + selectedTaco.protG + selectedTaco.fatG + selectedTaco.fiberG;
   const donutRadius = 42;
@@ -333,29 +301,25 @@ export function EcosystemExplorer() {
 
   return (
     <section
-      id="ecossistema"
-      className="relative scroll-mt-20 border-b border-slate-200/80 bg-white py-20 sm:py-28"
+      id="recursos"
+      className="relative scroll-mt-20 border-b border-slate-200/80 bg-[#F8FAFC] py-24 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Cabeçalho + Seletor Superior Web vs App */}
+        {/* Cabeçalho Limpo + Seletor Para o Médico vs Para o Paciente */}
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-2xl">
-            <p className="font-mono text-xs font-semibold tracking-[0.12em] text-sky-600 uppercase">
-              03 / Explorador do Ecossistema
-            </p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.03em] text-slate-900 sm:text-4xl">
-              Duas superfícies cirúrgicas. Uma experiência inesquecível.
+          <div className="max-w-xl">
+            <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-slate-900 sm:text-4xl">
+              O sistema na prática.
             </h2>
-            <p className="mt-3 text-base leading-relaxed text-slate-600">
-              Clique nos módulos e veja como cada gráfico, prescrição e check-in trabalha junto para elevar os resultados clínicos e o encantamento dos seus pacientes.
+            <p className="mt-3 text-base text-slate-600 sm:text-lg">
+              Veja como funciona no seu computador e no celular do paciente.
             </p>
           </div>
 
-          {/* Seletor Superior: Para a Clínica (Web) vs Para o Paciente (App) */}
           <div
-            className="inline-flex w-full rounded-2xl border border-slate-200/90 bg-[#F8FAFC] p-1.5 shadow-xs sm:w-auto"
+            className="inline-flex w-full rounded-2xl border border-slate-200/90 bg-white p-1.5 shadow-xs sm:w-auto"
             role="tablist"
-            aria-label="Alternar superfície do ecossistema FRdoc"
+            aria-label="Alternar entre painel do médico e app do paciente"
           >
             <button
               type="button"
@@ -365,11 +329,11 @@ export function EcosystemExplorer() {
               className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-150 sm:flex-none ${
                 surface === "web"
                   ? "bg-gradient-to-r from-emerald-600 to-sky-600 text-white shadow-xs"
-                  : "text-slate-600 hover:bg-white hover:text-slate-900"
+                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
               }`}
             >
               <Monitor className="h-4 w-4" aria-hidden="true" />
-              <span>Para a Clínica (Web)</span>
+              <span>Para o Médico</span>
             </button>
             <button
               type="button"
@@ -379,18 +343,18 @@ export function EcosystemExplorer() {
               className={`flex flex-1 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-150 sm:flex-none ${
                 surface === "app"
                   ? "bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-xs"
-                  : "text-slate-600 hover:bg-white hover:text-slate-900"
+                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
               }`}
             >
               <Smartphone className="h-4 w-4" aria-hidden="true" />
-              <span>Para o Paciente (App)</span>
+              <span>Para o Paciente</span>
             </button>
           </div>
         </div>
 
-        {/* Dois Painéis: Menu (Esquerda) + Palco Visual Interativo (Direita) */}
+        {/* Menu de Recursos + Palco Visual Colorido */}
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
-          {/* Coluna Esquerda: Menu Clicável com Ícones Coloridos */}
+          {/* Menu Esquerdo: 4 Cards Ultra-Enxutos */}
           <div className="flex flex-col gap-3 lg:col-span-5" role="list">
             {(surface === "web" ? WEB_MODULES : APP_MODULES).map((mod) => {
               const Icon = mod.icon;
@@ -410,100 +374,73 @@ export function EcosystemExplorer() {
                       setActiveAppModule(mod.id as AppModuleId);
                     }
                   }}
-                  className={`group relative flex w-full flex-col rounded-2xl border p-4 text-left transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 sm:p-5 ${
+                  className={`group relative flex w-full items-start gap-3.5 rounded-2xl border p-5 text-left transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 ${
                     isActive
                       ? `${mod.activeBorder} bg-white shadow-clinical`
-                      : "border-slate-200/80 bg-[#F8FAFC]/80 hover:border-slate-300 hover:bg-white"
+                      : "border-slate-200/80 bg-white/60 hover:border-slate-300 hover:bg-white"
                   }`}
                 >
                   <span
                     className={`absolute top-4 bottom-4 left-0 w-1 rounded-r-full transition-opacity ${
-                      isActive ? `${mod.railColor} opacity-100` : "bg-slate-200 opacity-0 group-hover:opacity-100"
+                      isActive
+                        ? `${mod.railColor} opacity-100`
+                        : "bg-slate-200 opacity-0 group-hover:opacity-100"
                     }`}
                     aria-hidden="true"
                   />
-                  <div className="flex items-start gap-3">
-                    <span
-                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border ${mod.iconBg}`}
-                    >
-                      <Icon className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                    <div>
-                      <span className="font-mono text-[10px] font-semibold tracking-wider text-slate-400">
-                        {mod.code}
-                      </span>
-                      <h3 className="text-sm font-bold text-slate-900 sm:text-[15px]">
-                        {mod.title}
-                      </h3>
-                    </div>
-                  </div>
-                  <p className="mt-2.5 text-xs leading-relaxed text-slate-600 sm:text-[13px]">
-                    {mod.subtitle}
-                  </p>
-                  <div className="mt-3 flex items-center justify-between">
-                    <span
-                      className={`rounded-md px-2 py-0.5 font-mono text-[10px] font-bold ${
-                        isActive ? mod.metricClass : "bg-slate-100 text-slate-500"
-                      }`}
-                    >
-                      {mod.metric}
-                    </span>
-                    <span
-                      className={`font-mono text-[11px] font-semibold transition-transform ${
-                        isActive
-                          ? "translate-x-0 text-slate-900"
-                          : "text-slate-400 group-hover:translate-x-0.5"
-                      }`}
-                    >
-                      {isActive ? "Em exibição" : "Explorar →"}
-                    </span>
+                  <span
+                    className={`mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${mod.iconBg}`}
+                  >
+                    <Icon className="h-4.5 w-4.5" aria-hidden="true" />
+                  </span>
+                  <div className="min-w-0">
+                    <h3 className="text-[15px] font-bold text-slate-900">
+                      {mod.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-600">
+                      {mod.subtitle}
+                    </p>
                   </div>
                 </button>
               );
             })}
           </div>
 
-          {/* Coluna Direita: Palco Visual Multicolorido */}
-          <div className="flex flex-col rounded-3xl border border-slate-200/90 bg-[#F8FAFC]/70 p-5 shadow-clinical-lg sm:p-7 lg:col-span-7">
-            {/* Barra superior do Palco */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200/80 pb-4">
+          {/* Palco Visual Interativo (Direita) */}
+          <div className="flex flex-col rounded-3xl border border-slate-200/90 bg-white p-5 shadow-clinical-lg sm:p-7 lg:col-span-7">
+            <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-4">
               <div className="flex items-center gap-2">
                 <span className="inline-flex gap-1" aria-hidden="true">
                   <span className="h-2 w-2 rounded-full bg-emerald-500" />
                   <span className="h-2 w-2 rounded-full bg-sky-500" />
                   <span className="h-2 w-2 rounded-full bg-indigo-500" />
                 </span>
-                <span className="font-mono text-[11px] font-semibold tracking-wider text-slate-600 uppercase">
+                <span className="text-xs font-semibold text-slate-600">
                   {surface === "web"
-                    ? "Painel Web da Clínica · Visualização Interativa"
-                    : "Aplicativo Mobile do Paciente · Experiência Interativa"}
+                    ? "Painel Web do Médico"
+                    : "Aplicativo com a marca da sua clínica"}
                 </span>
               </div>
-              <span className="rounded-full border border-slate-200 bg-white px-2.5 py-0.5 font-mono text-[10px] font-semibold text-slate-600">
-                {surface === "web" ? "DESKTOP & TABLET" : "IOS & ANDROID"}
+              <span className="font-mono text-[11px] font-medium text-slate-400">
+                {surface === "web" ? "Exemplo ao vivo" : "iOS & Android"}
               </span>
             </div>
 
-            {/* ================= WEB 01: PRONTUÁRIO COM TELEMETRIA ================= */}
+            {/* ================= WEB 01: PRONTUÁRIO VISUAL ================= */}
             {surface === "web" && activeWebModule === "prontuario" ? (
               <div className="mt-5 flex flex-1 flex-col justify-between gap-4">
-                <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-4">
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200/80 bg-[#F8FAFC] p-4">
                   <div>
-                    <div className="flex flex-wrap items-center gap-2">
-                      <h4 className="text-base font-bold text-slate-900">
-                        Rafael M. Almeida
-                      </h4>
-                      <span className="rounded-md bg-indigo-50 px-2 py-0.5 font-mono text-[10px] font-bold text-indigo-700">
-                        44a · Resistência Insulínica
-                      </span>
-                    </div>
-                    <p className="mt-1 text-xs text-slate-500">
-                      Telemetria integrada de 90 dias · Glicemia + Composição Corporal + Adesão
+                    <h4 className="text-base font-bold text-slate-900">
+                      Rafael M. Almeida{" "}
+                      <span className="font-normal text-slate-400">· 44 anos</span>
+                    </h4>
+                    <p className="mt-0.5 text-xs text-slate-500">
+                      Acompanhamento de 6 meses · Glicemia e composição corporal
                     </p>
                   </div>
 
-                  {/* Gauge Circular de Adesão */}
-                  <div className="flex items-center gap-2.5 rounded-xl border border-emerald-200/80 bg-emerald-50/50 px-3 py-1.5">
+                  <div className="flex items-center gap-2.5 rounded-xl border border-emerald-200/80 bg-white px-3 py-1.5">
                     <svg viewBox="0 0 40 40" className="h-9 w-9 -rotate-90" aria-hidden="true">
                       <defs>
                         <linearGradient id="ecoGauge1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -527,21 +464,21 @@ export function EcosystemExplorer() {
                     </svg>
                     <div>
                       <p className="font-mono text-xs font-extrabold text-slate-900">86%</p>
-                      <p className="font-mono text-[9px] font-semibold text-emerald-700">ADESÃO</p>
+                      <p className="text-[10px] font-semibold text-emerald-700">Consistência</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Gráfico Combinado Multissérie: Curva Glicêmica + Barras de Composição Corporal */}
-                <div className="rounded-2xl border border-slate-200 bg-white p-4">
+                {/* Gráfico Combinado Colorido */}
+                <div className="rounded-2xl border border-slate-200/80 bg-white p-4">
                   <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
                     <span className="text-xs font-bold text-slate-900">
-                      Evolução Combinada · Glicemia Média vs. Massa Gorda (%)
+                      Glicemia média vs. Gordura corporal
                     </span>
-                    <div className="flex items-center gap-3 font-mono text-[10px] font-semibold">
+                    <div className="flex items-center gap-3 text-[11px] font-semibold">
                       <span className="inline-flex items-center gap-1 text-emerald-700">
                         <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                        Glicemia (mg/dL)
+                        Glicemia
                       </span>
                       <span className="inline-flex items-center gap-1 text-indigo-700">
                         <span className="h-2 w-2 rounded-sm bg-indigo-500" />
@@ -550,7 +487,12 @@ export function EcosystemExplorer() {
                     </div>
                   </div>
 
-                  <svg viewBox="0 0 480 170" className="h-auto w-full" role="img" aria-label="Gráfico multissérie combinando curva glicêmica e barras de composição corporal ao longo de 6 meses">
+                  <svg
+                    viewBox="0 0 480 170"
+                    className="h-auto w-full"
+                    role="img"
+                    aria-label="Evolução de glicemia e gordura corporal em 6 meses"
+                  >
                     <defs>
                       <linearGradient id="ecoMultiBar" x1="0" y1="0" x2="0" y2="1">
                         <stop offset="0%" stopColor="#6366F1" stopOpacity="0.85" />
@@ -564,7 +506,6 @@ export function EcosystemExplorer() {
                       </linearGradient>
                     </defs>
 
-                    {/* Linhas guia */}
                     {[34, 72, 110, 144].map((y) => (
                       <line
                         key={y}
@@ -578,14 +519,13 @@ export function EcosystemExplorer() {
                       />
                     ))}
 
-                    {/* Barras de composição corporal (índigo -> ciano) */}
                     {[
-                      { x: 46, h: 98, label: "Jun", bf: "28%", gl: 152, gy: 32, dot: "#F43F5E" },
-                      { x: 118, h: 88, label: "Jul", bf: "26%", gl: 138, gy: 52, dot: "#F59E0B" },
-                      { x: 190, h: 78, label: "Ago", bf: "24%", gl: 124, gy: 68, dot: "#10B981" },
-                      { x: 262, h: 68, label: "Set", bf: "23%", gl: 114, gy: 82, dot: "#10B981" },
-                      { x: 334, h: 60, label: "Out", bf: "21%", gl: 106, gy: 92, dot: "#0EA5E9" },
-                      { x: 406, h: 52, label: "Nov", bf: "20%", gl: 98, gy: 102, dot: "#0EA5E9" },
+                      { x: 46, h: 98, label: "Jun", bf: "28%" },
+                      { x: 118, h: 88, label: "Jul", bf: "26%" },
+                      { x: 190, h: 78, label: "Ago", bf: "24%" },
+                      { x: 262, h: 68, label: "Set", bf: "23%" },
+                      { x: 334, h: 60, label: "Out", bf: "21%" },
+                      { x: 406, h: 52, label: "Nov", bf: "20%" },
                     ].map((col) => (
                       <g key={col.label}>
                         <rect
@@ -620,7 +560,6 @@ export function EcosystemExplorer() {
                       </g>
                     ))}
 
-                    {/* Curva glicêmica sobreposta (coral -> âmbar -> esmeralda -> ciano) */}
                     <path
                       d="M 62 32 C 92 40, 108 48, 134 52 C 166 58, 180 64, 206 68 C 238 74, 252 78, 278 82 C 308 87, 324 89, 350 92 C 380 96, 396 99, 422 102"
                       fill="none"
@@ -656,42 +595,36 @@ export function EcosystemExplorer() {
                   </svg>
                 </div>
 
-                {/* Resumo de Resultados */}
                 <div className="grid grid-cols-3 gap-2.5">
-                  <div className="rounded-xl border border-emerald-200/70 bg-white p-3">
-                    <p className="text-[10px] font-medium text-slate-500">HbA1c Estimada</p>
+                  <div className="rounded-xl border border-emerald-200/70 bg-emerald-50/35 p-3">
+                    <p className="text-[11px] text-slate-600">HbA1c</p>
                     <p className="mt-0.5 font-mono text-base font-extrabold text-emerald-700">
-                      5,6% <span className="text-[10px] font-semibold text-emerald-600">-0,8</span>
+                      5,6%
                     </p>
                   </div>
-                  <div className="rounded-xl border border-indigo-200/70 bg-white p-3">
-                    <p className="text-[10px] font-medium text-slate-500">Massa Gorda</p>
+                  <div className="rounded-xl border border-indigo-200/70 bg-indigo-50/35 p-3">
+                    <p className="text-[11px] text-slate-600">Gordura</p>
                     <p className="mt-0.5 font-mono text-base font-extrabold text-indigo-700">
-                      -8,0% <span className="text-[10px] font-semibold text-sky-600">6 meses</span>
+                      -8,0%
                     </p>
                   </div>
-                  <div className="rounded-xl border border-sky-200/70 bg-white p-3">
-                    <p className="text-[10px] font-medium text-slate-500">Registros App</p>
+                  <div className="rounded-xl border border-sky-200/70 bg-sky-50/35 p-3">
+                    <p className="text-[11px] text-slate-600">Registros</p>
                     <p className="mt-0.5 font-mono text-base font-extrabold text-sky-700">
-                      142 <span className="text-[10px] font-semibold text-slate-500">sincron.</span>
+                      142
                     </p>
                   </div>
                 </div>
               </div>
             ) : null}
 
-            {/* ================= WEB 02: MAPA GLICÊMICO & INSULINA ================= */}
+            {/* ================= WEB 02: MAPA DE GLICEMIA & INSULINA ================= */}
             {surface === "web" && activeWebModule === "glicemia" ? (
               <div className="mt-5 flex flex-1 flex-col justify-between gap-4">
                 <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div>
-                    <h4 className="text-base font-bold text-slate-900">
-                      Heatmap Glicêmico &amp; Doses de Insulina
-                    </h4>
-                    <p className="text-xs text-slate-500">
-                      Células codificadas por faixa clínica + barras de insulina basal em índigo
-                    </p>
-                  </div>
+                  <h4 className="text-base font-bold text-slate-900">
+                    Glicemia por horário &amp; Insulina
+                  </h4>
                   <button
                     type="button"
                     onClick={() => setShowPdfPreview((prev) => !prev)}
@@ -702,49 +635,51 @@ export function EcosystemExplorer() {
                     }`}
                   >
                     <FileDown className="h-3.5 w-3.5" aria-hidden="true" />
-                    <span>{showPdfPreview ? "Voltar ao Heatmap" : "Exportar PDF Institucional"}</span>
+                    <span>{showPdfPreview ? "Voltar ao Mapa" : "Ver PDF para o Paciente"}</span>
                   </button>
                 </div>
 
                 {showPdfPreview ? (
-                  <div className="rounded-2xl border border-indigo-200/80 bg-white p-5 shadow-xs">
-                    <div className="flex items-start justify-between border-b border-slate-200 pb-3.5">
-                      <div className="flex items-center gap-2.5">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-sky-500 font-mono text-xs font-bold text-white">
-                          IM
+                  <div className="rounded-2xl border border-indigo-200/80 bg-[#F8FAFC] p-5">
+                    <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-2xs">
+                      <div className="flex items-start justify-between border-b border-slate-100 pb-3.5">
+                        <div className="flex items-center gap-2.5">
+                          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-sky-500 font-mono text-xs font-bold text-white">
+                            IM
+                          </div>
+                          <div>
+                            <p className="text-sm font-bold text-slate-900">
+                              Instituto Metabo
+                            </p>
+                            <p className="text-xs text-slate-500">
+                              Relatório de Glicemia &amp; Insulina
+                            </p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-sm font-bold text-slate-900">
-                            Instituto Metabo · Relatório Clínico White-Label
-                          </p>
-                          <p className="font-mono text-[10px] font-semibold text-indigo-600">
-                            MAPA GLICÊMICO &amp; INSULINOTERAPIA · PRONTO PARA ENTREGA
-                          </p>
+                        <span className="font-mono text-[11px] text-slate-400">21/11/2026</span>
+                      </div>
+
+                      <div className="mt-4 grid grid-cols-3 gap-2.5 font-mono text-xs">
+                        <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-3">
+                          <p className="text-[10px] font-semibold text-emerald-700">NO ALVO</p>
+                          <p className="mt-0.5 text-base font-extrabold text-emerald-800">85%</p>
+                        </div>
+                        <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-3">
+                          <p className="text-[10px] font-semibold text-amber-700">ATENÇÃO</p>
+                          <p className="mt-0.5 text-base font-extrabold text-amber-800">10%</p>
+                        </div>
+                        <div className="rounded-xl border border-indigo-200 bg-indigo-50/70 p-3">
+                          <p className="text-[10px] font-semibold text-indigo-700">INSULINA</p>
+                          <p className="mt-0.5 text-base font-extrabold text-indigo-800">14 UI</p>
                         </div>
                       </div>
-                      <span className="font-mono text-[10px] text-slate-400">21/11/2026</span>
-                    </div>
 
-                    <div className="mt-4 grid grid-cols-3 gap-2.5 font-mono text-xs">
-                      <div className="rounded-xl border border-emerald-200 bg-emerald-50/70 p-3">
-                        <p className="text-[10px] font-semibold text-emerald-700">NO ALVO</p>
-                        <p className="mt-0.5 text-base font-extrabold text-emerald-800">85% TIR</p>
+                      <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-3 text-xs text-slate-500">
+                        <span>Dra. Camila Nogueira · CRM-SP 148.920</span>
+                        <span className="font-semibold text-emerald-700">
+                          Com a marca da clínica
+                        </span>
                       </div>
-                      <div className="rounded-xl border border-amber-200 bg-amber-50/70 p-3">
-                        <p className="text-[10px] font-semibold text-amber-700">LIMÍTROFE</p>
-                        <p className="mt-0.5 text-base font-extrabold text-amber-800">10%</p>
-                      </div>
-                      <div className="rounded-xl border border-indigo-200 bg-indigo-50/70 p-3">
-                        <p className="text-[10px] font-semibold text-indigo-700">BASAL MÉDIA</p>
-                        <p className="mt-0.5 text-base font-extrabold text-indigo-800">14,4 UI</p>
-                      </div>
-                    </div>
-
-                    <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 pt-3 text-[11px] text-slate-500">
-                      <span>Dra. Camila Nogueira · CRM-SP 148.920</span>
-                      <span className="rounded-md bg-emerald-50 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-700">
-                        100% Marca da Clínica
-                      </span>
                     </div>
                   </div>
                 ) : (
@@ -757,17 +692,17 @@ export function EcosystemExplorer() {
                           <th className="px-2 py-2.5 text-center">Pós-Café</th>
                           <th className="px-2 py-2.5 text-center">Pós-Almoço</th>
                           <th className="px-2 py-2.5 text-center">Pós-Jantar</th>
-                          <th className="px-3.5 py-2.5">Insulina (UI)</th>
+                          <th className="px-3.5 py-2.5">Insulina</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-100 font-mono text-xs">
-                        {HEATMAP_ROWS.map((row) => (
+                        {GLYCEMIA_TABLE_ROWS.map((row) => (
                           <tr key={row.day}>
                             <td className="px-3.5 py-2.5 font-semibold text-slate-700">{row.day}</td>
                             {[row.jejum, row.cafe, row.almoco, row.jantar].map((val, i) => (
                               <td key={i} className="px-1.5 py-2 text-center">
                                 <span
-                                  className={`inline-block min-w-[48px] rounded-lg border px-2 py-1 font-bold ${getHeatmapCellStyle(
+                                  className={`inline-block min-w-[48px] rounded-lg border px-2 py-1 font-bold ${getGlycemiaCellStyle(
                                     val
                                   )}`}
                                 >
@@ -793,35 +728,35 @@ export function EcosystemExplorer() {
                   </div>
                 )}
 
-                {/* Legenda Colorida */}
-                <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 font-mono text-[10px] font-semibold">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="inline-flex items-center gap-1.5 text-emerald-700">
-                      <span className="h-2.5 w-2.5 rounded-sm bg-emerald-500" />
-                      Alvo (70–139)
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 text-amber-700">
-                      <span className="h-2.5 w-2.5 rounded-sm bg-amber-500" />
-                      Limítrofe (140–159)
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 text-rose-700">
-                      <span className="h-2.5 w-2.5 rounded-sm bg-rose-500" />
-                      Pico (≥ 160)
-                    </span>
-                  </div>
-                  <span className="text-indigo-700">Insulina Basal em Índigo</span>
+                <div className="flex flex-wrap items-center gap-4 text-xs font-semibold">
+                  <span className="inline-flex items-center gap-1.5 text-emerald-700">
+                    <span className="h-2.5 w-2.5 rounded-sm bg-emerald-500" />
+                    No alvo (70–139)
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-amber-700">
+                    <span className="h-2.5 w-2.5 rounded-sm bg-amber-500" />
+                    Atenção (140–159)
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-rose-700">
+                    <span className="h-2.5 w-2.5 rounded-sm bg-rose-500" />
+                    Pico (≥ 160)
+                  </span>
                 </div>
               </div>
             ) : null}
 
-            {/* ================= WEB 03: BIBLIOTECA DE DIETAS (TACO) ================= */}
+            {/* ================= WEB 03: DIETAS INTELIGENTES (TACO) ================= */}
             {surface === "web" && activeWebModule === "dietas" ? (
               <div className="mt-5 flex flex-1 flex-col justify-between gap-4">
-                {/* Donut Multicolorido + Barras de Macros */}
-                <div className="grid grid-cols-1 items-center gap-5 rounded-2xl border border-slate-200 bg-white p-4 sm:grid-cols-[136px_1fr]">
+                <div className="grid grid-cols-1 items-center gap-5 rounded-2xl border border-slate-200/80 bg-[#F8FAFC] p-4 sm:grid-cols-[136px_1fr]">
                   <div className="relative mx-auto h-32 w-32 shrink-0">
-                    <svg viewBox="0 0 112 112" className="h-32 w-32 -rotate-90" role="img" aria-label="Gráfico de rosca de macronutrientes da dieta TACO">
-                      <circle cx="56" cy="56" r={donutRadius} fill="none" stroke="#F1F5F9" strokeWidth="12" />
+                    <svg
+                      viewBox="0 0 112 112"
+                      className="h-32 w-32 -rotate-90"
+                      role="img"
+                      aria-label="Distribuição de carboidratos, proteínas, gorduras boas e fibras"
+                    >
+                      <circle cx="56" cy="56" r={donutRadius} fill="none" stroke="#E2E8F0" strokeWidth="12" />
                       {donutArcs.map((arc) => (
                         <circle
                           key={arc.label}
@@ -843,20 +778,15 @@ export function EcosystemExplorer() {
                         1.840
                       </span>
                       <span className="font-mono text-[9px] font-semibold text-slate-400">
-                        KCAL/DIA
+                        KCAL
                       </span>
                     </div>
                   </div>
 
                   <div className="space-y-2.5">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-slate-900">
-                        Distribuição de Macronutrientes (Tabela TACO)
-                      </span>
-                      <span className="rounded-md bg-violet-50 px-2 py-0.5 font-mono text-[10px] font-bold text-violet-700">
-                        EQUILIBRADA
-                      </span>
-                    </div>
+                    <p className="text-xs font-bold text-slate-900">
+                      Resumo do plano alimentar (Tabela TACO)
+                    </p>
                     {donutArcs.map((seg) => (
                       <div key={seg.label} className="space-y-1">
                         <div className="flex items-center justify-between text-[11px]">
@@ -879,24 +809,17 @@ export function EcosystemExplorer() {
                   </div>
                 </div>
 
-                {/* Trocas Inteligentes 1:N */}
+                {/* Trocas Inteligentes na Dieta */}
                 <div className="rounded-2xl border border-amber-200/80 bg-white p-4">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div>
-                      <div className="flex items-center gap-2">
-                        <p className="text-xs font-bold text-slate-900">
-                          {selectedTaco.name}
-                        </p>
-                        <span className="rounded bg-amber-50 px-1.5 py-0.5 font-mono text-[9px] font-bold text-amber-700">
-                          TROCA 1:N INTERATIVA
-                        </span>
-                      </div>
+                      <p className="text-xs font-bold text-slate-900">{selectedTaco.name}</p>
                       <p className="mt-0.5 text-[11px] text-slate-500">
-                        Medida caseira: {selectedTaco.measure} · {selectedTaco.kcal} kcal
+                        {selectedTaco.measure} · {selectedTaco.kcal} kcal
                       </p>
                     </div>
-                    <span className="font-mono text-[10px] font-semibold text-emerald-700">
-                      Equivalência TACO ✓
+                    <span className="rounded-md bg-amber-50 px-2 py-0.5 text-[10px] font-bold text-amber-700">
+                      Troca inteligente
                     </span>
                   </div>
 
@@ -920,33 +843,32 @@ export function EcosystemExplorer() {
               </div>
             ) : null}
 
-            {/* ================= WEB 04: PACOTES, AGENDA & PERFIS ================= */}
+            {/* ================= WEB 04: AGENDA, PACOTES E EQUIPE ================= */}
             {surface === "web" && activeWebModule === "gestao" ? (
               <div className="mt-5 flex flex-1 flex-col justify-between gap-4">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {/* Pacotes de Consultas com Barras Coloridas */}
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <span className="font-mono text-[10px] font-bold text-indigo-600 uppercase">
-                      Pacotes de Sessões Ativos
+                  <div className="rounded-2xl border border-slate-200/80 bg-[#F8FAFC] p-4">
+                    <span className="text-xs font-bold text-slate-900">
+                      Pacotes de acompanhamento
                     </span>
                     <div className="mt-3 space-y-3">
                       {[
                         {
-                          name: "Protocolo Metabólico",
+                          name: "Plano Semestral",
                           progress: "4 / 6",
                           pct: 67,
                           bar: "from-emerald-500 to-sky-500",
                           track: "bg-emerald-50",
                         },
                         {
-                          name: "Nutrologia Performance",
+                          name: "Nutrologia 8 sessões",
                           progress: "5 / 8",
                           pct: 63,
                           bar: "from-indigo-500 to-violet-500",
                           track: "bg-indigo-50",
                         },
                         {
-                          name: "Saúde Integrativa",
+                          name: "Acompanhamento Trimestral",
                           progress: "3 / 4",
                           pct: 75,
                           bar: "from-amber-500 to-orange-500",
@@ -971,16 +893,13 @@ export function EcosystemExplorer() {
                     </div>
                   </div>
 
-                  {/* Agenda Categorizada por Cor */}
-                  <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                    <span className="font-mono text-[10px] font-bold text-sky-600 uppercase">
-                      Agenda Semanal · Categorizada
-                    </span>
+                  <div className="rounded-2xl border border-slate-200/80 bg-white p-4">
+                    <span className="text-xs font-bold text-slate-900">Agenda do dia</span>
                     <ul className="mt-3 space-y-2 text-xs">
                       {[
                         { time: "09:00", patient: "Mariana S. Ribeiro", tag: "Retorno", pill: "bg-emerald-50 text-emerald-700 border-emerald-200" },
-                        { time: "10:30", patient: "Rafael M. Almeida", tag: "Telemetria", pill: "bg-sky-50 text-sky-700 border-sky-200" },
-                        { time: "14:00", patient: "Clara P. Mendes", tag: "Bioimpedância", pill: "bg-violet-50 text-violet-700 border-violet-200" },
+                        { time: "10:30", patient: "Rafael M. Almeida", tag: "Revisão", pill: "bg-sky-50 text-sky-700 border-sky-200" },
+                        { time: "14:00", patient: "Clara P. Mendes", tag: "Exames", pill: "bg-violet-50 text-violet-700 border-violet-200" },
                         { time: "16:00", patient: "Lucas F. Andrade", tag: "1ª Consulta", pill: "bg-amber-50 text-amber-700 border-amber-200" },
                       ].map((slot) => (
                         <li
@@ -993,7 +912,7 @@ export function EcosystemExplorer() {
                             </span>
                             <span className="font-semibold text-slate-700">{slot.patient}</span>
                           </div>
-                          <span className={`rounded-md border px-2 py-0.5 font-mono text-[9.5px] font-bold ${slot.pill}`}>
+                          <span className={`rounded-md border px-2 py-0.5 text-[10px] font-bold ${slot.pill}`}>
                             {slot.tag}
                           </span>
                         </li>
@@ -1002,48 +921,29 @@ export function EcosystemExplorer() {
                   </div>
                 </div>
 
-                {/* Governança de Perfis Coloridos */}
-                <div className="rounded-2xl border border-slate-200 bg-white p-4">
-                  <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center justify-between gap-2 rounded-2xl border border-slate-200/80 bg-[#F8FAFC] px-4 py-3">
+                  <div className="flex items-center gap-2 text-xs font-bold text-slate-800">
                     <Shield className="h-4 w-4 text-indigo-600" aria-hidden="true" />
-                    <span className="text-xs font-bold text-slate-900">
-                      Níveis de Acesso &amp; Sigilo Clínico (RBAC)
-                    </span>
+                    <span>Acesso separado:</span>
                   </div>
-                  <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
-                    <div className="rounded-xl border border-violet-200/80 bg-violet-50/40 p-3">
-                      <span className="inline-block rounded-full bg-violet-100 px-2 py-0.5 font-mono text-[10px] font-bold text-violet-800">
-                        Diretoria Clínica
-                      </span>
-                      <p className="mt-1.5 text-[11px] text-slate-600">
-                        Visão total, auditoria, equipe e indicadores de retenção.
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-emerald-200/80 bg-emerald-50/40 p-3">
-                      <span className="inline-block rounded-full bg-emerald-100 px-2 py-0.5 font-mono text-[10px] font-bold text-emerald-800">
-                        Médico
-                      </span>
-                      <p className="mt-1.5 text-[11px] text-slate-600">
-                        Prontuário, curvas, insulina, PDFs e dietas TACO.
-                      </p>
-                    </div>
-                    <div className="rounded-xl border border-sky-200/80 bg-sky-50/40 p-3">
-                      <span className="inline-block rounded-full bg-sky-100 px-2 py-0.5 font-mono text-[10px] font-bold text-sky-800">
-                        Secretária
-                      </span>
-                      <p className="mt-1.5 text-[11px] text-slate-600">
-                        Agenda e pacotes — prontuário médico 100% blindado.
-                      </p>
-                    </div>
+                  <div className="flex flex-wrap gap-1.5 text-[11px] font-bold">
+                    <span className="rounded-full border border-violet-200 bg-violet-50 px-2.5 py-0.5 text-violet-700">
+                      Diretoria
+                    </span>
+                    <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-0.5 text-emerald-700">
+                      Médico
+                    </span>
+                    <span className="rounded-full border border-sky-200 bg-sky-50 px-2.5 py-0.5 text-sky-700">
+                      Recepção
+                    </span>
                   </div>
                 </div>
               </div>
             ) : null}
 
-            {/* ================= PALCOS APP MOBILE ================= */}
+            {/* ================= PALCOS APP DO PACIENTE ================= */}
             {surface === "app" ? (
               <div className="mt-5 grid flex-1 grid-cols-1 items-center gap-6 sm:grid-cols-[282px_1fr]">
-                {/* Moldura do Smartphone */}
                 <div className="mx-auto w-full max-w-[282px] rounded-[2.1rem] border border-slate-300/90 bg-white p-2 shadow-clinical ring-4 ring-slate-100/80">
                   <div className="overflow-hidden rounded-[1.6rem] border border-slate-200/80 bg-[#F8FAFC]">
                     <div className="flex items-center justify-between bg-white px-4 py-2.5 font-mono text-[10px] font-semibold text-slate-500">
@@ -1058,12 +958,8 @@ export function EcosystemExplorer() {
                     {activeAppModule === "dieta-app" ? (
                       <div className="space-y-2.5 p-3">
                         <div className="rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 p-3 text-white">
-                          <p className="font-mono text-[9px] uppercase opacity-85">
-                            Plano Alimentar · Hoje
-                          </p>
-                          <p className="mt-0.5 text-xs font-bold">
-                            Almoço Metabólico · 12h30
-                          </p>
+                          <p className="text-[10px] opacity-85">Plano de hoje</p>
+                          <p className="mt-0.5 text-xs font-bold">Almoço · 12h30</p>
                         </div>
 
                         <div className="rounded-xl border border-violet-200 bg-white p-3">
@@ -1088,8 +984,8 @@ export function EcosystemExplorer() {
                             </span>
                           </div>
 
-                          <p className="mt-2.5 font-mono text-[9px] font-semibold text-slate-400 uppercase">
-                            Troca equivalente em 1 toque:
+                          <p className="mt-2.5 text-[10px] font-semibold text-slate-400">
+                            Trocar em 1 toque:
                           </p>
                           <div className="mt-1.5 flex flex-wrap gap-1">
                             {APP_PROTEIN_SWAPS.map((opt, idx) => (
@@ -1117,18 +1013,18 @@ export function EcosystemExplorer() {
                             </span>
                           </div>
                           <p className="mt-0.5 text-[10px] text-slate-500">
-                            Salada verde + 1 col. azeite extravirgem
+                            Salada verde + 1 col. azeite
                           </p>
                         </div>
                       </div>
                     ) : null}
 
-                    {/* APP 02: LANÇAMENTO RÁPIDO DE GLICEMIA (RÉGUA 4 FAIXAS) */}
+                    {/* APP 02: GLICEMIA EM SEGUNDOS */}
                     {activeAppModule === "glicemia-app" ? (
                       <div className="space-y-3 p-3">
                         <div className="rounded-xl border border-slate-200 bg-white p-3.5 text-center">
-                          <p className="font-mono text-[10px] font-semibold text-slate-400 uppercase">
-                            Leitura · {selectedGlycemia.context}
+                          <p className="text-[10px] font-semibold text-slate-400">
+                            {selectedGlycemia.context}
                           </p>
                           <p
                             className={`mt-1 font-mono text-3xl font-extrabold tracking-tight ${selectedGlycemia.valueClass}`}
@@ -1139,12 +1035,12 @@ export function EcosystemExplorer() {
                             </span>
                           </p>
                           <span
-                            className={`mt-2 inline-flex rounded-full border px-2.5 py-0.5 font-mono text-[10px] font-bold ${selectedGlycemia.badgeClass}`}
+                            className={`mt-2 inline-flex rounded-full border px-2.5 py-0.5 text-[10px] font-bold ${selectedGlycemia.badgeClass}`}
                           >
                             {selectedGlycemia.status}
                           </span>
 
-                          {/* Régua Visual Colorida 4 Faixas (Azul Hipo · Esmeralda Alvo · Âmbar Atenção · Coral Alta) */}
+                          {/* Régua Colorida de 4 Faixas */}
                           <div className="relative mt-4 pt-2">
                             <div
                               className="absolute top-0 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-slate-900 bg-white shadow-xs transition-all duration-300"
@@ -1165,14 +1061,14 @@ export function EcosystemExplorer() {
                             </div>
                           </div>
 
-                          <p className="mt-2.5 text-[10px] leading-snug text-slate-600">
+                          <p className="mt-2.5 text-[10.5px] leading-snug text-slate-600">
                             {selectedGlycemia.note}
                           </p>
                         </div>
 
                         <div>
-                          <p className="mb-1.5 font-mono text-[9px] font-semibold text-slate-400 uppercase">
-                            Testar valor na régua:
+                          <p className="mb-1.5 text-[10px] font-semibold text-slate-400">
+                            Toque para testar um valor:
                           </p>
                           <div className="grid grid-cols-4 gap-1.5">
                             {GLYCEMIA_RULER_SAMPLES.map((sample, idx) => (
@@ -1194,10 +1090,9 @@ export function EcosystemExplorer() {
                       </div>
                     ) : null}
 
-                    {/* APP 03: CHECK-INS DIÁRIOS COLORIDOS */}
+                    {/* APP 03: ROTINA QUE MOTIVA */}
                     {activeAppModule === "checkins-app" ? (
                       <div className="space-y-2.5 p-3">
-                        {/* Hidratação Sky/Ciano */}
                         <div className="rounded-xl border border-sky-200/80 bg-white p-3">
                           <div className="flex items-center justify-between">
                             <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-slate-900">
@@ -1221,21 +1116,20 @@ export function EcosystemExplorer() {
                             }
                             className="mt-2.5 w-full rounded-lg border border-sky-200 bg-sky-50 py-1 font-mono text-[10px] font-bold text-sky-700 transition-colors hover:bg-sky-100"
                           >
-                            {hydrationMl >= 2500 ? "Meta atingida ✓ (Reiniciar)" : "+250 ml rápido"}
+                            {hydrationMl >= 2500 ? "Meta atingida ✓" : "+250 ml"}
                           </button>
                         </div>
 
-                        {/* Treino Laranja/Âmbar */}
                         <div className="flex items-center justify-between rounded-xl border border-orange-200/80 bg-white p-3">
                           <div className="flex items-center gap-2">
                             <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-50 text-orange-500">
                               <Dumbbell className="h-4 w-4" aria-hidden="true" />
                             </span>
                             <div>
-                              <p className="text-[11px] font-bold text-slate-900">Treino de Força</p>
+                              <p className="text-[11px] font-bold text-slate-900">Treino</p>
                               <p className="inline-flex items-center gap-1 font-mono text-[10px] text-orange-600">
                                 <Flame className="h-3 w-3" aria-hidden="true" />
-                                50 min · 410 kcal
+                                50 min feitos
                               </p>
                             </div>
                           </div>
@@ -1244,11 +1138,8 @@ export function EcosystemExplorer() {
                           </span>
                         </div>
 
-                        {/* Ritmo Intestinal Esmeralda/Violeta */}
                         <div className="rounded-xl border border-violet-200/80 bg-white p-3">
-                          <p className="text-[11px] font-bold text-slate-900">
-                            Ritmo Intestinal (Bristol)
-                          </p>
+                          <p className="text-[11px] font-bold text-slate-900">Intestino</p>
                           <div className="mt-2 grid grid-cols-3 gap-1.5">
                             {[3, 4, 5].map((tipo) => (
                               <button
@@ -1269,7 +1160,7 @@ export function EcosystemExplorer() {
                       </div>
                     ) : null}
 
-                    {/* APP 04: EVOLUÇÃO MULTICOLORIDA & CANAL DIRETO */}
+                    {/* APP 04: EVOLUÇÃO & RECEPÇÃO */}
                     {activeAppModule === "evolucao-app" ? (
                       <div className="space-y-2.5 p-3">
                         <div className="rounded-xl border border-slate-200 bg-white p-3">
@@ -1283,15 +1174,11 @@ export function EcosystemExplorer() {
                               <circle cx="30" cy="30" r="10" fill="none" stroke="#8B5CF6" strokeWidth="4.5" strokeLinecap="round" strokeDasharray="62.8" strokeDashoffset="11" />
                             </svg>
                             <div>
-                              <p className="text-[11px] font-bold text-slate-900">
-                                Consistência Semanal
-                              </p>
+                              <p className="text-[11px] font-bold text-slate-900">Consistência</p>
                               <p className="bg-gradient-to-r from-emerald-600 to-indigo-600 bg-clip-text font-mono text-lg font-extrabold text-transparent">
                                 86%
                               </p>
-                              <p className="font-mono text-[9px] text-slate-400">
-                                6 sem. consecutivas
-                              </p>
+                              <p className="text-[10px] text-slate-400">6 semanas seguidas</p>
                             </div>
                           </div>
 
@@ -1318,11 +1205,11 @@ export function EcosystemExplorer() {
                           <div className="flex items-center gap-2">
                             <MessageSquare className="h-4 w-4 text-indigo-600" aria-hidden="true" />
                             <p className="text-[11px] font-bold text-slate-900">
-                              Canal Direto com a Recepção
+                              Recepção da Clínica
                             </p>
                           </div>
-                          <p className="mt-1 text-[10px] leading-snug text-slate-600">
-                            Reagendamento, exames e renovação de pacotes em um toque.
+                          <p className="mt-1 text-[10px] text-slate-600">
+                            Atalho direto para reagendar consultas.
                           </p>
                           <div className="mt-2 rounded-lg bg-gradient-to-r from-emerald-600 to-sky-600 py-1.5 text-center text-[10px] font-semibold text-white">
                             Falar com a Recepção
@@ -1331,7 +1218,7 @@ export function EcosystemExplorer() {
                       </div>
                     ) : null}
 
-                    {/* Barra inferior interativa do Smartphone */}
+                    {/* Abas inferiores do celular */}
                     <div className="grid grid-cols-4 border-t border-slate-200/80 bg-white px-2 py-2 text-center font-mono text-[9px] font-bold">
                       {[
                         { id: "dieta-app" as const, label: "Dieta", activeClass: "bg-violet-50 text-violet-700" },
@@ -1356,41 +1243,29 @@ export function EcosystemExplorer() {
                   </div>
                 </div>
 
-                {/* Painel Lateral de Benefício Clínico */}
+                {/* Resumo direto à direita do celular */}
                 <div className="space-y-4">
-                  <div className="rounded-2xl border border-slate-200/80 bg-white p-4">
-                    <p className="font-mono text-[10px] font-bold tracking-wider text-violet-600 uppercase">
-                      Por que o paciente usa todos os dias
-                    </p>
-                    <h4 className="mt-1.5 text-base font-bold text-slate-900">
+                  <div>
+                    <h4 className="text-lg font-bold text-slate-900">
                       {APP_MODULES.find((m) => m.id === activeAppModule)?.title}
                     </h4>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-1.5 text-sm leading-relaxed text-slate-600">
                       {APP_MODULES.find((m) => m.id === activeAppModule)?.subtitle}
                     </p>
                   </div>
 
-                  <ul className="space-y-2.5 text-xs text-slate-600">
-                    <li className="flex items-start gap-2.5 rounded-xl border border-slate-200/80 bg-white p-3">
-                      <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" aria-hidden="true" />
-                      <span>
-                        <strong className="font-semibold text-slate-900">Efeito UAU imediato:</strong>{" "}
-                        logo na primeira consulta o paciente percebe que está em uma clínica de outro patamar.
-                      </span>
+                  <ul className="space-y-2.5 text-sm text-slate-700">
+                    <li className="flex items-center gap-2.5">
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
+                      <span>Leva apenas o nome e as cores da sua clínica.</span>
                     </li>
-                    <li className="flex items-start gap-2.5 rounded-xl border border-slate-200/80 bg-white p-3">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600" aria-hidden="true" />
-                      <span>
-                        <strong className="font-semibold text-slate-900">Zero ruído no WhatsApp:</strong>{" "}
-                        substituições alimentares e registros acontecem dentro do app da clínica.
-                      </span>
+                    <li className="flex items-center gap-2.5">
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-sky-600" aria-hidden="true" />
+                      <span>Fácil de usar por pacientes de qualquer idade.</span>
                     </li>
-                    <li className="flex items-start gap-2.5 rounded-xl border border-slate-200/80 bg-white p-3">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-sky-600" aria-hidden="true" />
-                      <span>
-                        <strong className="font-semibold text-slate-900">Retorno produtivo:</strong>{" "}
-                        os dados chegam prontos no prontuário para decisões clínicas de alta precisão.
-                      </span>
+                    <li className="flex items-center gap-2.5">
+                      <CheckCircle2 className="h-4 w-4 shrink-0 text-indigo-600" aria-hidden="true" />
+                      <span>Tudo aparece organizado no seu prontuário.</span>
                     </li>
                   </ul>
                 </div>

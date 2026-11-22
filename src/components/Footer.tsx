@@ -39,7 +39,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="transition-colors hover:text-emerald-700"
             >
-              WhatsApp Comercial
+              WhatsApp
             </a>
             <span className="hidden text-slate-300 sm:inline" aria-hidden="true">
               ·
