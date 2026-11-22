@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="frdocIconGrad" x1="5" y1="16" x2="27" y2="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="55%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#0EA5E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#FFFFFF"/>
+  <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="7.25" stroke="#E2E8F0" stroke-width="1.5"/>
+  <path d="M5.5 17H10.5L13 10.5L16.5 22L19.5 14L21.5 17H26.5" stroke="url(#frdocIconGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="26.5" cy="17" r="2" fill="#0EA5E9"/>
+</svg>

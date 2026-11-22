@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-plus-jakarta), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-porcelain: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-hairline: #E2E8F0;
+  --color-graphite: #0F172A;
+  --color-slate-body: #475569;
+  --color-clinical: #059669;
+  --color-clinical-bright: #10B981;
+  --color-telemetry-sky: #0EA5E9;
+  --color-telemetry-indigo: #6366F1;
+  --color-telemetry-amber: #F59E0B;
+  --color-telemetry-rose: #F43F5E;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background-color: rgba(14, 165, 233, 0.16);
+    color: #0F172A;
+  }
+}
+
+/* Textura sutil de micro-grid de telemetria clínica */
+.bg-clinical-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.14) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.bg-clinical-grid-fine {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.11) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.11) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.clinical-grid-mask {
+  mask-image: radial-gradient(ellipse 88% 78% at 50% 22%, #000 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 88% 78% at 50% 22%, #000 55%, transparent 100%);
+}
+
+/* Halos suaves translúcidos multicoloridos para base clara */
+.bg-telemetry-halo {
+  background:
+    radial-gradient(circle at 18% 35%, rgba(16, 185, 129, 0.12), transparent 44%),
+    radial-gradient(circle at 52% 24%, rgba(14, 165, 233, 0.11), transparent 46%),
+    radial-gradient(circle at 82% 42%, rgba(99, 102, 241, 0.11), transparent 46%);
+}
+
+/* Sombras arquitetônicas difusas */
+.shadow-clinical {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 10px 28px -12px rgba(15, 23, 42, 0.07);
+}
+
+.shadow-clinical-lg {
+  box-shadow:
+    0 1px 3px rgba(15, 23, 42, 0.05),
+    0 22px 48px -18px rgba(15, 23, 42, 0.12);
+}
+
+/* Fluxo suave de telemetria em SVG */
+@keyframes telemetry-dash {
+  from {
+    stroke-dashoffset: 36;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-telemetry-flow {
+  animation: telemetry-dash 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-telemetry-flow {
+    animation: none;
+  }
+}
