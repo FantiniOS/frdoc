@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import {
   Activity,
   Apple,
-  Building2,
+  Calendar,
   CalendarClock,
   LineChart,
   Maximize2,
@@ -30,7 +30,7 @@ import {
 
 type SurfaceMode = "web" | "app";
 type WebModuleId = "visao-paciente" | "mapa-glicemia" | "dieta-taco" | "gestao-clinica";
-type AppModuleId = "plano-bolso" | "registro-glicemia" | "rotina-evolucao" | "marca-clinica";
+type AppModuleId = "plano-bolso" | "registro-glicemia" | "rotina-evolucao" | "consultas-clinica";
 
 interface ModuleItem<T extends string> {
   id: T;
@@ -48,7 +48,7 @@ const WEB_MODULES: readonly ModuleItem<WebModuleId>[] = [
     id: "visao-paciente",
     title: "Visão Completa do Paciente",
     subtitle:
-      "Resumo clínico, termômetro de constância e evolução organizados antes da consulta.",
+      "Prontuário, peso, medidas e termômetro de adesão reunidos antes da consulta.",
     url: "app.institutometabo.com.br/pacientes",
     iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200/80",
     activeBorder: "border-emerald-300",
@@ -68,9 +68,9 @@ const WEB_MODULES: readonly ModuleItem<WebModuleId>[] = [
   },
   {
     id: "dieta-taco",
-    title: "Prescrição de Dietas (Tabela TACO)",
+    title: "Plano Alimentar (Tabela TACO)",
     subtitle:
-      "Refeições com medidas caseiras, biblioteca de modelos e trocas rápidas.",
+      "Refeições com medidas caseiras, biblioteca de modelos e variações por dia.",
     url: "app.institutometabo.com.br/pacientes/dieta",
     iconBg: "bg-amber-50 text-amber-600 border-amber-200/80",
     activeBorder: "border-amber-300",
@@ -95,7 +95,7 @@ const APP_MODULES: readonly ModuleItem<AppModuleId>[] = [
     id: "plano-bolso",
     title: "Plano Alimentar no Bolso",
     subtitle:
-      "Refeições claras, registro em segundos e troca de alimentos em um toque.",
+      "Refeições claras, registro rápido e troca de alimentos em um toque.",
     iconBg: "bg-emerald-50 text-emerald-600 border-emerald-200/80",
     activeBorder: "border-emerald-300",
     railColor: "bg-gradient-to-b from-emerald-500 to-teal-500",
@@ -103,9 +103,9 @@ const APP_MODULES: readonly ModuleItem<AppModuleId>[] = [
   },
   {
     id: "registro-glicemia",
-    title: "Registro Rápido de Glicemia",
+    title: "Glicemia por Horário",
     subtitle:
-      "Lançamento simples por horário que alimenta automaticamente o mapa do médico.",
+      "Lançamento simples em segundos que atualiza automaticamente o mapa do médico.",
     iconBg: "bg-sky-50 text-sky-600 border-sky-200/80",
     activeBorder: "border-sky-300",
     railColor: "bg-gradient-to-b from-sky-500 to-indigo-500",
@@ -113,23 +113,23 @@ const APP_MODULES: readonly ModuleItem<AppModuleId>[] = [
   },
   {
     id: "rotina-evolucao",
-    title: "Rotina Diária e Evolução",
+    title: "Peso, Sono, Água e Intestino",
     subtitle:
-      "Peso, medidas, hidratação e hábitos acompanhados de forma leve no dia a dia.",
+      "Evolução de peso, medidas, qualidade do sono, hidratação e Escala de Bristol.",
     iconBg: "bg-violet-50 text-violet-600 border-violet-200/80",
     activeBorder: "border-violet-300",
     railColor: "bg-gradient-to-b from-violet-500 to-sky-500",
     icon: TrendingUp,
   },
   {
-    id: "marca-clinica",
-    title: "Com a Marca da Sua Clínica",
+    id: "consultas-clinica",
+    title: "Consultas e Recepção",
     subtitle:
-      "Nome, cores, próxima consulta e canal direto com a sua recepção.",
+      "Confirmação da próxima consulta, controle do pacote e canal direto com a clínica.",
     iconBg: "bg-amber-50 text-amber-600 border-amber-200/80",
     activeBorder: "border-amber-300",
     railColor: "bg-gradient-to-b from-amber-500 to-emerald-500",
-    icon: Building2,
+    icon: Calendar,
   },
 ];
 
@@ -154,7 +154,7 @@ function renderAppScreen(id: AppModuleId) {
       return <AppGlycemiaScreen />;
     case "rotina-evolucao":
       return <AppEvolutionScreen />;
-    case "marca-clinica":
+    case "consultas-clinica":
       return <AppClinicBrandScreen />;
   }
 }
@@ -174,30 +174,30 @@ export function EcosystemExplorer() {
 
   const activeTitle =
     surface === "web"
-      ? `Painel Web — ${currentWebItem.title}`
-      : `Aplicativo do Paciente — ${currentAppItem.title}`;
+      ? `Painel Web (Clínica) — ${currentWebItem.title}`
+      : `Aplicativo (Paciente) — ${currentAppItem.title}`;
 
   return (
     <section
       id="na-pratica"
-      className="relative scroll-mt-20 border-b border-slate-200/80 bg-[#F8FAFC] py-24 sm:py-32"
+      className="relative scroll-mt-20 border-b border-slate-200/80 bg-[#F8FAFC] py-20 sm:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Cabeçalho + Seletor Para o Médico vs Para o Paciente */}
+        {/* Cabeçalho + Seletor Clínica (Web) vs Paciente (App) */}
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-xl">
             <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-slate-900 sm:text-4xl">
-              O sistema na prática.
+              O FRdoc na prática.
             </h2>
             <p className="mt-3 text-base text-slate-600 sm:text-lg">
-              Explore as telas do painel médico e do aplicativo do paciente.
+              Explore as telas do painel da clínica e do aplicativo do paciente.
             </p>
           </div>
 
           <div
             className="inline-flex w-full rounded-2xl border border-slate-200/90 bg-white p-1.5 shadow-xs sm:w-auto"
             role="tablist"
-            aria-label="Alternar entre painel do médico e aplicativo do paciente"
+            aria-label="Alternar entre Painel Web (Clínica) e Aplicativo (Paciente)"
           >
             <button
               type="button"
@@ -211,7 +211,7 @@ export function EcosystemExplorer() {
               }`}
             >
               <Monitor className="h-4 w-4" aria-hidden="true" />
-              <span>Para o Médico</span>
+              <span>Clínica (Web)</span>
             </button>
             <button
               type="button"
@@ -225,12 +225,12 @@ export function EcosystemExplorer() {
               }`}
             >
               <Smartphone className="h-4 w-4" aria-hidden="true" />
-              <span>Para o Paciente</span>
+              <span>Paciente (App)</span>
             </button>
           </div>
         </div>
 
-        {/* Menu Esquerdo + Vitrine Fiel à Direita */}
+        {/* Menu Esquerdo + Palco Visual Fiel à Direita */}
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
           {/* Coluna Esquerda: 4 Módulos Reais */}
           <div className="flex flex-col gap-3 lg:col-span-4" role="list">
@@ -284,7 +284,7 @@ export function EcosystemExplorer() {
             })}
           </div>
 
-          {/* Coluna Direita: Tela Fiel ao Sistema em Moldura + Zoom */}
+          {/* Coluna Direita: Tela Fiel em Moldura + Zoom */}
           <div className="relative lg:col-span-8">
             <div
               className="pointer-events-none absolute -inset-3 -z-10 rounded-[2rem] opacity-80"

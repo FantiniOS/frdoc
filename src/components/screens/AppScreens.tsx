@@ -16,6 +16,7 @@ import {
   HeartPulse,
   Home,
   MessageCircle,
+  Moon,
   Plus,
   Ruler,
   Scale,
@@ -624,14 +625,14 @@ export function AppEvolutionScreen() {
           </svg>
         </div>
 
-        {/* Bloco 2: Medidas & Intestino (Bristol) */}
+        {/* Bloco 2: Medidas, Intestino (Bristol), Sono e Hidratação */}
         <div className="grid grid-cols-2 gap-2">
           <div className="rounded-2xl border border-slate-200/90 bg-white p-2.5">
             <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-700">
               <Ruler className="h-3.5 w-3.5 text-sky-600" aria-hidden="true" />
               Medidas
             </div>
-            <p className="mt-1.5 font-mono text-xs font-extrabold text-slate-900">
+            <p className="mt-1 font-mono text-xs font-extrabold text-slate-900">
               76,5 cm
             </p>
             <p className="text-[9.5px] font-semibold text-emerald-700">
@@ -644,10 +645,36 @@ export function AppEvolutionScreen() {
               <Activity className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
               Intestino
             </div>
-            <p className="mt-1.5 text-xs font-extrabold text-emerald-700">
+            <p className="mt-1 text-xs font-extrabold text-emerald-700">
               Padrão Ideal
             </p>
-            <p className="text-[9.5px] text-slate-500">Escala de Bristol</p>
+            <p className="text-[9.5px] text-slate-500">Bristol · Tipo 4</p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200/90 bg-white p-2.5">
+            <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-700">
+              <Moon className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
+              Sono
+            </div>
+            <p className="mt-1 font-mono text-xs font-extrabold text-slate-900">
+              7h 30min
+            </p>
+            <p className="text-[9.5px] font-semibold text-indigo-700">
+              Bom · Repouso
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200/90 bg-white p-2.5">
+            <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-700">
+              <Droplets className="h-3.5 w-3.5 text-cyan-600" aria-hidden="true" />
+              Hidratação
+            </div>
+            <p className="mt-1 font-mono text-xs font-extrabold text-slate-900">
+              2.000 ml
+            </p>
+            <p className="text-[9.5px] font-semibold text-cyan-700">
+              80% da meta
+            </p>
           </div>
         </div>
       </div>
@@ -658,7 +685,7 @@ export function AppEvolutionScreen() {
 }
 
 /**
- * TELA APP 5 — Aba Clínica (Com a Marca da Sua Clínica)
+ * TELA APP 5 — Aba Clínica (Consultas, Pacote e Recepção)
  * Espelho fiel de mobile/src/screens/ProfileScreen.tsx
  */
 export function AppClinicBrandScreen() {

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "FRDOC — Tecnologia Clínica Registrada para Endocrinologia";
+export const alt = "FRdoc — Endocrinologia é o corpo inteiro, todos os dias";
 export const size = {
   width: 1200,
   height: 630,
@@ -86,24 +86,24 @@ export default function OpenGraphImage() {
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#10B981" }} />
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#0EA5E9" }} />
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#6366F1" }} />
-            <span style={{ marginLeft: "4px" }}>TECNOLOGIA REGISTRADA PARA ENDOCRINOLOGIA</span>
+            <span style={{ marginLeft: "4px" }}>ECOSSISTEMA CLÍNICO PARA ENDOCRINOLOGIA</span>
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px", maxWidth: "960px" }}>
           <div
             style={{
-              fontSize: "52px",
+              fontSize: "56px",
               fontWeight: 800,
               color: "#0F172A",
               lineHeight: 1.08,
               letterSpacing: "-0.035em",
             }}
           >
-            O cuidado da sua clínica de endocrinologia, vivo entre uma consulta e outra.
+            Endocrinologia é o corpo inteiro, todos os dias.
           </div>
           <div style={{ fontSize: "23px", color: "#475569", lineHeight: 1.45 }}>
-            Um painel clínico visual para o médico e um aplicativo com a marca da sua clínica para o paciente.
+            O FRdoc reúne a gestão da sua clínica e a rotina metabólica completa do paciente em uma única central — do consultório ao celular.
           </div>
         </div>
 
@@ -117,11 +117,11 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ display: "flex", gap: "20px", fontSize: "15px", fontWeight: 700 }}>
-            <span style={{ color: "#059669" }}>GLICEMIA &amp; INSULINA</span>
+            <span style={{ color: "#059669" }}>PESO, SONO &amp; BRISTOL</span>
             <span style={{ color: "#CBD5E1" }}>·</span>
-            <span style={{ color: "#0284C7" }}>DIETAS TABELA TACO</span>
+            <span style={{ color: "#0284C7" }}>DIETA TABELA TACO</span>
             <span style={{ color: "#CBD5E1" }}>·</span>
-            <span style={{ color: "#6366F1" }}>SOMOS FRDOC</span>
+            <span style={{ color: "#6366F1" }}>GLICEMIA &amp; INSULINA</span>
           </div>
           <div style={{ fontSize: "16px", fontWeight: 800, color: "#0F172A" }}>
             frdoc.com.br

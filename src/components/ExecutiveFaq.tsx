@@ -13,38 +13,32 @@ interface FaqItem {
 
 const FAQ_ITEMS: readonly FaqItem[] = [
   {
-    id: "nome-clinica",
-    question: "O aplicativo fica mesmo com o nome da minha clínica?",
+    id: "dados-separados",
+    question: "Os dados dos meus pacientes ficam misturados com os de outras clínicas?",
     answer:
-      "Sim. O aplicativo, o endereço de acesso e todos os relatórios em PDF levam exclusivamente o nome, a logo e as cores da sua clínica.",
+      "Não. Cada clínica contratante opera com ambiente e banco de dados separados, protegidos pela LGPD e pelo sigilo médico.",
     accentText: "text-emerald-700",
-  },
-  {
-    id: "dados-privados",
-    question: "Os dados dos meus pacientes são privados?",
-    answer:
-      "Totalmente. Sua clínica conta com um espaço exclusivo e protegido, respeitando o sigilo médico e a LGPD.",
-    accentText: "text-sky-700",
   },
   {
     id: "equipe-ti",
     question: "Preciso ter equipe de TI na clínica?",
     answer:
-      "Não. Nossa equipe cuida da personalização, da segurança e do treinamento de médicos e recepção.",
+      "Não. Nossa equipe cuida de toda a configuração, entrega e suporte técnico para você focar no atendimento.",
+    accentText: "text-sky-700",
+  },
+  {
+    id: "uso-pacientes",
+    question:
+      "Pacientes de todas as idades conseguem registrar peso, sono, água, intestino e glicemia no aplicativo?",
+    answer:
+      "Sim. O aplicativo foi desenhado para ser leve e direto: em poucos toques o paciente acompanha o plano e registra a rotina diária.",
     accentText: "text-indigo-700",
   },
   {
-    id: "todas-idades",
-    question: "Pacientes de todas as idades conseguem usar o app?",
+    id: "inicio-treinamento",
+    question: "Como funciona o início e o treinamento da equipe?",
     answer:
-      "Sim. O aplicativo é leve e intuitivo: em poucos toques o paciente vê a dieta, faz trocas e registra a glicemia.",
-    accentText: "text-amber-700",
-  },
-  {
-    id: "tempo-inicio",
-    question: "Em quanto tempo minha clínica começa a usar?",
-    answer:
-      "Em poucos dias entregamos o painel e o aplicativo personalizados no ar, prontos para a rotina do consultório.",
+      "Configuramos o ambiente da clínica e conduzimos um treinamento prático com médicos e recepção para usarem tudo com fluidez desde o primeiro dia.",
     accentText: "text-teal-700",
   },
 ];
@@ -56,7 +50,7 @@ export function ExecutiveFaq() {
   return (
     <section
       id="duvidas"
-      className="relative scroll-mt-20 border-b border-slate-200/80 bg-white py-24 sm:py-32"
+      className="relative scroll-mt-20 bg-[#F8FAFC] pt-20 pb-12 sm:pt-28 sm:pb-16"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
@@ -64,13 +58,13 @@ export function ExecutiveFaq() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-slate-900 sm:text-4xl">
-                Dúvidas frequentes.
+                Dúvidas rápidas.
               </h2>
               <p className="mt-3 text-base text-slate-600">
-                Respostas diretas sobre como o FRDOC funciona na sua clínica.
+                Respostas diretas sobre privacidade, uso diário e implantação na clínica.
               </p>
 
-              <div className="mt-7 rounded-2xl border border-slate-200/90 bg-[#F8FAFC] p-5">
+              <div className="mt-7 rounded-2xl border border-slate-200/90 bg-white p-5 shadow-2xs">
                 <p className="text-sm font-bold text-slate-900">
                   Prefere conversar diretamente com nossa equipe?
                 </p>
@@ -86,7 +80,7 @@ export function ExecutiveFaq() {
                   </a>
                   <a
                     href={`mailto:${siteConfig.contactEmail}`}
-                    className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 font-mono text-[11px] font-medium text-slate-700 transition-colors hover:border-slate-300"
+                    className="inline-flex items-center gap-1.5 rounded-xl border border-slate-200 bg-slate-50 px-3.5 py-2.5 font-mono text-[11px] font-medium text-slate-700 transition-colors hover:border-slate-300"
                   >
                     <Mail className="h-3.5 w-3.5 text-sky-600" aria-hidden="true" />
                     <span>{siteConfig.contactEmail}</span>

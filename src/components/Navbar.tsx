@@ -4,7 +4,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { BrandMark } from "./BrandMark";
-import { getWhatsAppUrl, siteConfig } from "@/config/site";
+import { getWhatsAppUrl } from "@/config/site";
+
+const NAV_LINKS = [
+  { label: "O Ecossistema", href: "#ecossistema" },
+  { label: "Na Prática", href: "#na-pratica" },
+  { label: "Privacidade", href: "#privacidade" },
+  { label: "Dúvidas", href: "#duvidas" },
+] as const;
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,7 +30,7 @@ export function Navbar() {
 
         {/* Navegação Desktop */}
         <nav className="hidden items-center gap-1 md:flex" aria-label="Navegação principal">
-          {siteConfig.navLinks.map((item) => (
+          {NAV_LINKS.map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -51,7 +58,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setMobileOpen((prev) => !prev)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-colors hover:bg-slate-50 md:hidden"
+          className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-colors hover:bg-slate-50 md:hidden"
           aria-expanded={mobileOpen}
           aria-controls="mobile-nav-panel"
           aria-label={mobileOpen ? "Fechar menu" : "Abrir menu"}
@@ -74,7 +81,7 @@ export function Navbar() {
             className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 sm:px-6"
             aria-label="Navegação mobile"
           >
-            {siteConfig.navLinks.map((item) => (
+            {NAV_LINKS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}

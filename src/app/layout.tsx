@@ -17,6 +17,12 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const PAGE_TITLE = "FRdoc — Endocrinologia é o corpo inteiro, todos os dias";
+const PAGE_DESCRIPTION =
+  "O FRdoc reúne a gestão da sua clínica e a rotina metabólica completa do paciente em uma única central — peso, medidas, sono, água, intestino, treinos, dieta TACO, glicemia e insulina.";
+const OG_DESCRIPTION =
+  "O FRdoc reúne a gestão da sua clínica e a rotina metabólica completa do paciente em uma única central — do consultório ao celular.";
+
 export const viewport: Viewport = {
   themeColor: "#F8FAFC",
   width: "device-width",
@@ -26,24 +32,24 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domain),
   title: {
-    default: siteConfig.seo.title,
-    template: `%s | FRDOC`,
+    default: PAGE_TITLE,
+    template: "%s | FRdoc",
   },
-  description: siteConfig.seo.description,
-  applicationName: "FRDOC",
+  description: PAGE_DESCRIPTION,
+  applicationName: "FRdoc",
   keywords: [
-    "FRDOC",
-    "sistema para clínicas de endocrinologia",
-    "acompanhamento de pacientes endocrinologia",
+    "FRdoc",
+    "ecossistema clínico endocrinologia",
+    "central clínica endocrinologia",
+    "acompanhamento metabólico de pacientes",
     "mapa de glicemia e insulina",
-    "prescrição de dietas tabela TACO",
-    "aplicativo próprio para clínica médica",
-    "prontuário visual endocrinologia",
-    "sigilo médico LGPD",
+    "plano alimentar tabela TACO",
+    "escala de Bristol sono hidratação",
+    "prontuário endocrinologia LGPD",
   ],
-  authors: [{ name: "FRDOC — Tecnologia Clínica Registrada", url: siteConfig.domain }],
-  creator: "FRDOC",
-  publisher: "FRDOC",
+  authors: [{ name: "FRdoc — Ecossistema Clínico", url: siteConfig.domain }],
+  creator: "FRdoc",
+  publisher: "FRdoc",
   alternates: {
     canonical: "/",
   },
@@ -51,14 +57,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: siteConfig.domain,
-    siteName: "FRDOC",
-    title: siteConfig.seo.title,
-    description: siteConfig.seo.shortDescription,
+    siteName: "FRdoc",
+    title: PAGE_TITLE,
+    description: OG_DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.seo.title,
-    description: siteConfig.seo.shortDescription,
+    title: PAGE_TITLE,
+    description: OG_DESCRIPTION,
   },
   robots: {
     index: true,

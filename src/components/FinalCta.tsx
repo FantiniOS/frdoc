@@ -6,7 +6,7 @@ export function FinalCta() {
   const whatsappUrl = getWhatsAppUrl();
 
   return (
-    <section className="relative bg-[#F8FAFC] py-24 sm:py-28">
+    <section className="relative bg-[#F8FAFC] pt-8 pb-20 sm:pt-12 sm:pb-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[2rem] border border-slate-200/90 bg-white p-8 shadow-clinical-lg sm:p-14 lg:p-16">
           <div
@@ -24,15 +24,15 @@ export function FinalCta() {
 
           <div className="relative mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-extrabold tracking-[-0.035em] text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
-              Veja na prática como o{" "}
+              Veja o{" "}
               <span className="bg-gradient-to-r from-emerald-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
-                FRDOC
+                FRdoc
               </span>{" "}
-              se encaixa na sua clínica.
+              funcionando ao vivo.
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              Em 15 minutos, mostramos o painel e o aplicativo ao vivo — exatamente como você viu aqui.
+              Em 15 minutos, mostramos o painel e o aplicativo exatamente como você viu aqui.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -42,13 +42,13 @@ export function FinalCta() {
                 rel="noopener noreferrer"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-600 px-7 py-4 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:from-emerald-700 hover:via-teal-700 hover:to-sky-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 sm:w-auto"
               >
-                <span>Agendar Demonstração no WhatsApp</span>
+                <span>Agendar Demonstração</span>
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
 
               <a
                 href={`mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(
-                  "Demonstração do FRDOC"
+                  "Demonstração do FRdoc"
                 )}`}
                 className="inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
               >
@@ -56,11 +56,6 @@ export function FinalCta() {
                 <span>{siteConfig.contactEmail}</span>
               </a>
             </div>
-
-            <p className="mt-7 text-xs font-medium tracking-wide text-slate-500">
-              Tecnologia clínica exclusiva e registrada.{" "}
-              <span className="font-bold text-slate-800">Somos FRDOC.</span>
-            </p>
           </div>
         </div>
       </div>
