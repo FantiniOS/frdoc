@@ -1,24 +1,24 @@
 export const siteConfig = {
   brandName: "FRdoc",
-  brandTagline: "Tecnologia Clínica",
+  brandTagline: "Tecnologia Clínica Registrada",
   domain: "https://frdoc.com.br",
   // Número oficial de WhatsApp comercial no formato DDI + DDD + número (apenas dígitos): (31) 99694-4540
   whatsappNumber: "5531996944540",
   whatsappMessage:
-    "Olá! Gostaria de agendar uma demonstração rápida do FRdoc com o nome da minha clínica.",
+    "Olá! Gostaria de agendar uma demonstração do FRDOC para a minha clínica de endocrinologia.",
   contactEmail: "contato@frdoc.com.br",
   seo: {
     title:
-      "FRdoc — Painel Clínico e Aplicativo Próprio para Endocrinologia e Nutrologia",
+      "FRDOC — Tecnologia Clínica Registrada para Clínicas de Endocrinologia",
     description:
-      "Sua clínica presente na rotina do paciente todos os dias. Um painel clínico inteligente para o médico e um aplicativo exclusivo com a marca da sua clínica, em espaço 100% privado e adequado à LGPD.",
+      "Um painel clínico visual para o endocrinologista e um aplicativo com a marca da sua clínica para o paciente. Clareza real sobre glicemia, insulina, dieta pela Tabela TACO e evolução entre consultas.",
     shortDescription:
-      "Painel clínico inteligente para o médico e aplicativo exclusivo com a marca da sua clínica para acompanhar pacientes todos os dias.",
+      "O cuidado da sua clínica de endocrinologia, vivo entre uma consulta e outra. Painel clínico visual e aplicativo com a sua marca.",
   },
   navLinks: [
-    { label: "Simulador", href: "#simulador" },
-    { label: "Recursos", href: "#recursos" },
-    { label: "Segurança", href: "#seguranca" },
+    { label: "Na Prática", href: "#na-pratica" },
+    { label: "Exclusividade", href: "#exclusividade" },
+    { label: "Como Funciona", href: "#como-funciona" },
     { label: "Dúvidas", href: "#duvidas" },
   ],
 } as const;

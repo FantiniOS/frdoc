@@ -23,15 +23,16 @@ export function FinalCta() {
           />
 
           <div className="relative mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-extrabold tracking-[-0.035em] text-slate-900 sm:text-4xl lg:text-[2.85rem] lg:leading-[1.08]">
-              Encante seus pacientes desde a{" "}
+            <h2 className="text-3xl font-extrabold tracking-[-0.035em] text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+              Veja na prática como o{" "}
               <span className="bg-gradient-to-r from-emerald-600 via-sky-600 to-indigo-600 bg-clip-text text-transparent">
-                primeira consulta.
-              </span>
+                FRDOC
+              </span>{" "}
+              se encaixa na sua clínica.
             </h2>
 
             <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">
-              Agende uma demonstração rápida de 15 minutos e veja o FRdoc ao vivo com o nome da sua clínica.
+              Em 15 minutos, mostramos o painel e o aplicativo ao vivo — exatamente como você viu aqui.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -47,7 +48,7 @@ export function FinalCta() {
 
               <a
                 href={`mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(
-                  "Demonstração do FRdoc"
+                  "Demonstração do FRDOC"
                 )}`}
                 className="inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-slate-600 transition-colors hover:text-slate-900"
               >
@@ -55,6 +56,11 @@ export function FinalCta() {
                 <span>{siteConfig.contactEmail}</span>
               </a>
             </div>
+
+            <p className="mt-7 text-xs font-medium tracking-wide text-slate-500">
+              Tecnologia clínica exclusiva e registrada.{" "}
+              <span className="font-bold text-slate-800">Somos FRDOC.</span>
+            </p>
           </div>
         </div>
       </div>

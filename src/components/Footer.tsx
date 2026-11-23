@@ -14,12 +14,12 @@ export function Footer() {
             <Link
               href="/"
               className="inline-flex rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600"
-              aria-label="FRdoc — Início"
+              aria-label="FRDOC — Início"
             >
               <BrandMark size="sm" showStatus={false} />
             </Link>
             <p className="text-xs text-slate-500">
-              © 2026 {siteConfig.brandName} — {siteConfig.brandTagline}. Todos os direitos reservados.
+              © 2026 FRDOC — Tecnologia Clínica Registrada. Todos os direitos reservados.
             </p>
           </div>
 

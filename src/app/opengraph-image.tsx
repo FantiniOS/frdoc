@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "FRdoc — Painel Clínico e Aplicativo Próprio da sua Clínica";
+export const alt = "FRDOC — Tecnologia Clínica Registrada para Endocrinologia";
 export const size = {
   width: 1200,
   height: 630,
@@ -78,7 +78,7 @@ export default function OpenGraphImage() {
               borderRadius: "9999px",
               backgroundColor: "#FFFFFF",
               border: "1px solid #CBD5E1",
-              fontSize: "14px",
+              fontSize: "13px",
               fontWeight: 700,
               color: "#0F172A",
             }}
@@ -86,24 +86,24 @@ export default function OpenGraphImage() {
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#10B981" }} />
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#0EA5E9" }} />
             <div style={{ width: "8px", height: "8px", borderRadius: "9999px", backgroundColor: "#6366F1" }} />
-            <span style={{ marginLeft: "4px" }}>ENDOCRINOLOGIA &amp; NUTROLOGIA</span>
+            <span style={{ marginLeft: "4px" }}>TECNOLOGIA REGISTRADA PARA ENDOCRINOLOGIA</span>
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px", maxWidth: "960px" }}>
           <div
             style={{
-              fontSize: "54px",
+              fontSize: "52px",
               fontWeight: 800,
               color: "#0F172A",
               lineHeight: 1.08,
               letterSpacing: "-0.035em",
             }}
           >
-            Sua clínica presente na rotina do paciente, todos os dias.
+            O cuidado da sua clínica de endocrinologia, vivo entre uma consulta e outra.
           </div>
-          <div style={{ fontSize: "24px", color: "#475569", lineHeight: 1.45 }}>
-            Painel clínico inteligente para o médico e aplicativo exclusivo com a marca da sua clínica para o paciente.
+          <div style={{ fontSize: "23px", color: "#475569", lineHeight: 1.45 }}>
+            Um painel clínico visual para o médico e um aplicativo com a marca da sua clínica para o paciente.
           </div>
         </div>
 
@@ -117,13 +117,11 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ display: "flex", gap: "20px", fontSize: "15px", fontWeight: 700 }}>
-            <span style={{ color: "#059669" }}>APP COM SUA MARCA</span>
+            <span style={{ color: "#059669" }}>GLICEMIA &amp; INSULINA</span>
             <span style={{ color: "#CBD5E1" }}>·</span>
-            <span style={{ color: "#0284C7" }}>GLICEMIA EM TEMPO REAL</span>
+            <span style={{ color: "#0284C7" }}>DIETAS TABELA TACO</span>
             <span style={{ color: "#CBD5E1" }}>·</span>
-            <span style={{ color: "#6366F1" }}>DIETAS TACO</span>
-            <span style={{ color: "#CBD5E1" }}>·</span>
-            <span style={{ color: "#F59E0B" }}>SIGILO &amp; LGPD</span>
+            <span style={{ color: "#6366F1" }}>SOMOS FRDOC</span>
           </div>
           <div style={{ fontSize: "16px", fontWeight: 800, color: "#0F172A" }}>
             frdoc.com.br

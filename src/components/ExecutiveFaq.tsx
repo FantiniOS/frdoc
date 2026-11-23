@@ -20,32 +20,32 @@ const FAQ_ITEMS: readonly FaqItem[] = [
     accentText: "text-emerald-700",
   },
   {
-    id: "dados-seguros",
-    question: "Os dados dos meus pacientes ficam seguros e privados?",
+    id: "dados-privados",
+    question: "Os dados dos meus pacientes são privados?",
     answer:
-      "Totalmente. Sua clínica tem um espaço 100% exclusivo e protegido, com sigilo médico absoluto e adequação completa à LGPD.",
+      "Totalmente. Sua clínica conta com um espaço exclusivo e protegido, respeitando o sigilo médico e a LGPD.",
     accentText: "text-sky-700",
   },
   {
-    id: "precisa-ti",
-    question: "Preciso entender de tecnologia ou ter TI na clínica?",
+    id: "equipe-ti",
+    question: "Preciso ter equipe de TI na clínica?",
     answer:
-      "De jeito nenhum. Nossa equipe personaliza, coloca tudo no ar, cuida da segurança e treina médicos e recepção do zero.",
-    accentText: "text-violet-700",
+      "Não. Nossa equipe cuida da personalização, da segurança e do treinamento de médicos e recepção.",
+    accentText: "text-indigo-700",
   },
   {
-    id: "facil-paciente",
-    question: "É fácil para o paciente usar no dia a dia?",
+    id: "todas-idades",
+    question: "Pacientes de todas as idades conseguem usar o app?",
     answer:
-      "Sim, foi pensado para todas as idades. Em poucos toques o paciente vê a dieta, faz trocas de alimentos e registra a glicemia em segundos.",
+      "Sim. O aplicativo é leve e intuitivo: em poucos toques o paciente vê a dieta, faz trocas e registra a glicemia.",
     accentText: "text-amber-700",
   },
   {
-    id: "tempo-comecar",
+    id: "tempo-inicio",
     question: "Em quanto tempo minha clínica começa a usar?",
     answer:
-      "Em média, de 7 a 15 dias úteis já entregamos o painel e o aplicativo personalizados no ar, com sua equipe treinada para atender.",
-    accentText: "text-indigo-700",
+      "Em poucos dias entregamos o painel e o aplicativo personalizados no ar, prontos para a rotina do consultório.",
+    accentText: "text-teal-700",
   },
 ];
 
@@ -64,15 +64,15 @@ export function ExecutiveFaq() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <h2 className="text-3xl font-extrabold tracking-[-0.03em] text-slate-900 sm:text-4xl">
-                Dúvidas rápidas.
+                Dúvidas frequentes.
               </h2>
               <p className="mt-3 text-base text-slate-600">
-                Tudo claro e direto antes da sua demonstração.
+                Respostas diretas sobre como o FRDOC funciona na sua clínica.
               </p>
 
               <div className="mt-7 rounded-2xl border border-slate-200/90 bg-[#F8FAFC] p-5">
                 <p className="text-sm font-bold text-slate-900">
-                  Prefere tirar suas dúvidas ao vivo?
+                  Prefere conversar diretamente com nossa equipe?
                 </p>
                 <div className="mt-4 flex flex-wrap items-center gap-3">
                   <a
@@ -108,7 +108,7 @@ export function ExecutiveFaq() {
                   key={item.id}
                   className={`rounded-2xl border bg-white transition-colors duration-150 ${
                     isOpen
-                      ? "border-sky-200/90 shadow-clinical"
+                      ? "border-emerald-200/90 shadow-clinical"
                       : "border-slate-200/90 hover:border-slate-300"
                   }`}
                 >
@@ -119,7 +119,7 @@ export function ExecutiveFaq() {
                       aria-expanded={isOpen}
                       aria-controls={panelId}
                       onClick={() => setOpenId(isOpen ? null : item.id)}
-                      className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-inset sm:px-6"
+                      className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-inset sm:px-6"
                     >
                       <span className="flex items-baseline gap-3">
                         <span className={`font-mono text-xs font-bold ${item.accentText}`}>
@@ -132,7 +132,7 @@ export function ExecutiveFaq() {
                       <span
                         className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border transition-all duration-200 ${
                           isOpen
-                            ? "rotate-180 border-sky-200 bg-sky-50 text-sky-700"
+                            ? "rotate-180 border-emerald-200 bg-emerald-50 text-emerald-700"
                             : "border-slate-200 bg-slate-50 text-slate-500"
                         }`}
                         aria-hidden="true"
