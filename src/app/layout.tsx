@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -90,6 +91,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen bg-[#F8FAFC] font-sans text-[#0F172A] antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
